@@ -36,8 +36,6 @@ export default {
   		const response = await fetch(
 		    `https://www.rottentomatoes.com/api/private/v1.0/movies/${id}.json`
 		);
-		const text = await readBodyAndDecode(response);
-
-    	return JSON.parse(text);
+		return await response.json();
 	}
 }
